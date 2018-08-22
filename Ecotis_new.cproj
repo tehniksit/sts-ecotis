@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>6.0</ProjectVersion>
+    <ToolchainName>com.Atmel.AVRGCC8</ToolchainName>
+    <ProjectGuid>{0a6cf50f-4689-4c8d-adc0-4ea399ae9374}</ProjectGuid>
+    <avrdevice>ATmega128</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>Executable</OutputType>
+    <Language>C</Language>
+    <OutputFileName>$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <AssemblyName>Ecotis_new</AssemblyName>
+    <Name>Ecotis_new</Name>
+    <RootNamespace>Ecotis_new</RootNamespace>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <OverrideVtorValue />
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+    <AsfVersion>3.5.0</AsfVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <AvrGcc>
+        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+        <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.linker.libraries.Libraries>
+          <ListValues>
+            <Value>m</Value>
+          </ListValues>
+        </avrgcc.linker.libraries.Libraries>
+      </AvrGcc>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <AvrGcc>
+        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+        <avrgcc.common.outputfiles.lss>False</avrgcc.common.outputfiles.lss>
+        <avrgcc.common.outputfiles.eep>False</avrgcc.common.outputfiles.eep>
+        <avrgcc.common.outputfiles.srec>False</avrgcc.common.outputfiles.srec>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>../apps</Value>
+            <Value>../delay</Value>
+            <Value>../enc28j60</Value>
+            <Value>../spim</Value>
+            <Value>../timers</Value>
+            <Value>../uip</Value>
+            <Value>..</Value>
+          </ListValues>
+        </avrgcc.compiler.directories.IncludePaths>
+        <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.linker.libraries.Libraries>
+          <ListValues>
+            <Value>m</Value>
+          </ListValues>
+        </avrgcc.linker.libraries.Libraries>
+        <avrgcc.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcc.assembler.debugging.DebugLevel>
+      </AvrGcc>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="apps\dhcpc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="apps\dhcpc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="apps\lcd.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="apps\lcd.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="apps\umqtt.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="apps\umqtt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="delay\delay.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="delay\delay.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Ecotis.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Ecotis.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="enc28j60\enc28j60.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="enc28j60\enc28j60.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="enc28j60\enc28j60def.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="main.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="main.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="net_config.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="spim\spim.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="spim\spim.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="terminal_io.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="timers\timers.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="timers\tmr2.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="timers\tmr2.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="uip-conf.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="uip\clock-arch.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="uip\clock.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="uip\lc-addrlabels.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="uip\lc-switch.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="uip\lc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="uip\nic.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="uip\nic.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="uip\psock.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="uip\psock.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="uip\pt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="uip\timer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="uip\timer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="uip\uip-conf.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="uip\uip-empty-packet.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="uip\uip-empty-packet.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="uip\uip-split.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="uip\uip-split.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="uip\uip.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="uip\uip.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="uip\uipopt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="uip\uip_arp.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="uip\uip_arp.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="uip\VERSION.h">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="apps" />
+    <Folder Include="delay" />
+    <Folder Include="enc28j60" />
+    <Folder Include="uip" />
+    <Folder Include="timers" />
+    <Folder Include="spim" />
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>
