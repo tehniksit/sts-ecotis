@@ -2,6 +2,8 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
+apps\adc.c
+
 apps\dhcpc.c
 
 apps\lcd.c

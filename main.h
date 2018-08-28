@@ -11,6 +11,8 @@
 #if (ENABLE_DHCP == 1)
 #include <dhcpc.h>
 #endif
+#include "adc.h"
+
 #include "umqtt.h"
 #include "enc28j60.h"
 #include "clock.h"
@@ -20,9 +22,9 @@
 #include "main.h"
 #include "net_config.h"
 #include "terminal_io.h"
+
 #include "lcd.h"
 #include "Ecotis.h"
-
 
 #if UIP_SPLIT_HACK
 #include "uip-split.h"

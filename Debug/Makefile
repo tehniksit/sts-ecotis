@@ -41,6 +41,7 @@ SUBDIRS :=  \
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
+../apps/adc.c \
 ../apps/dhcpc.c \
 ../apps/lcd.c \
 ../apps/umqtt.c \
@@ -66,6 +67,7 @@ ASM_SRCS +=
 
 
 OBJS +=  \
+apps/adc.o \
 apps/dhcpc.o \
 apps/lcd.o \
 apps/umqtt.o \
@@ -85,6 +87,7 @@ uip/uip_arp.o
 
 
 OBJS_AS_ARGS +=  \
+apps/adc.o \
 apps/dhcpc.o \
 apps/lcd.o \
 apps/umqtt.o \
@@ -104,6 +107,7 @@ uip/uip_arp.o
 
 
 C_DEPS +=  \
+apps/adc.d \
 apps/dhcpc.d \
 apps/lcd.d \
 apps/umqtt.d \
@@ -123,6 +127,7 @@ uip/uip_arp.d
 
 
 C_DEPS_AS_ARGS +=  \
+apps/adc.d \
 apps/dhcpc.d \
 apps/lcd.d \
 apps/umqtt.d \
@@ -150,6 +155,8 @@ ADDITIONAL_DEPENDENCIES:=
 OUTPUT_FILE_DEP:= ./makedep.mk
 
 # AVR32/GNU C Compiler
+
+
 
 
 
