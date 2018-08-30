@@ -286,8 +286,8 @@ int main(void)
   timer_set(&lcd_ip_timer, CLOCK_SECOND * 45);
   
   ADC_Init();
-  unsigned int adc_value;
-  float n;
+  
+  
 
   while (1)
   {
@@ -295,12 +295,8 @@ int main(void)
 	system_state();
 	show_state_lcd();
 	show_ip_lcd();
-	adc_value = ADC_convert(); //Вызовем преобразование
-	setpos(0,0);
-	sendchar(adc_value/1000+0x30);//Преобразуем число в код числа
-	sendchar((adc_value%1000)/100+0x30);//Преобразуем число в код числа
-	sendchar((adc_value%100)/10+0x30);//Преобразуем число в код числа
-	sendchar(adc_value%10+0x30);//Преобразуем число в код числа
+	adc_task();
+
 	
   }
 }
