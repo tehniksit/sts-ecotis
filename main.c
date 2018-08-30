@@ -20,51 +20,51 @@ clock_time_t clock_time(void)
 
 void pub_toner_sup_bk(void)
 {
-	//читаем слово из eeprom
+	//reading word from eeprom
 	toner_bk_count = eeprom_read_word(&cnt_bk_load);	
 	char str[30];
 	sprintf(str, "%d", toner_bk_count);
 	umqtt_publish(&mqtt, "/System1/bk_count", (uint8_t *) str, strlen(str));
 	toner_bk_count++;
-	//записываем слово в eeprom
+	//writing word in eeprom
 	eeprom_write_word (&cnt_bk_load, toner_bk_count);
 	
 }
 
 void pub_toner_sup_c(void)
 {
-	//читаем слово из eeprom
+	//reading word from eeprom
 	toner_c_count = eeprom_read_word(&cnt_c_load);
 	char str[30];
 	sprintf(str, "%d", toner_c_count);
 	umqtt_publish(&mqtt, "/System1/c_count", (uint8_t *) str, strlen(str));
 	toner_c_count++;
-	//записываем слово в eeprom
+	//writing word in eeprom
 	eeprom_write_word (&cnt_c_load, toner_c_count);
 	
 }
 
 void pub_toner_sup_m(void)
 {
-	//читаем слово из eeprom
+	//reading word from eeprom
 	toner_m_count = eeprom_read_word(&cnt_m_load);
 	char str[30];
 	sprintf(str, "%d", toner_m_count);
 	umqtt_publish(&mqtt, "/System1/m_count", (uint8_t *) str, strlen(str));
 	toner_m_count++;
-	//записываем слово в eeprom
+	//writing word in eeprom
 	eeprom_write_word (&cnt_m_load, toner_m_count);
 }
 
 void pub_toner_sup_y(void)
 {
-	//читаем слово из eeprom
+	//reading word from eeprom
 	toner_y_count = eeprom_read_word(&cnt_y_load);
 	char str[30];
 	sprintf(str, "%d", toner_y_count);
 	umqtt_publish(&mqtt, "/System1/y_count", (uint8_t *) str, strlen(str));
 	toner_y_count++;
-	//записываем слово в eeprom
+	//writing word in eeprom
 	eeprom_write_word (&cnt_y_load, toner_y_count);
 	
 }
