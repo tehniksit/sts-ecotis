@@ -19,6 +19,7 @@ main.d main.o: .././main.c .././main.h \
  c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/util/delay.h \
  c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/util/delay_basic.h \
  c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/math.h \
+ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/avr/eeprom.h \
  ../apps/adc.h ../apps/umqtt.h ../enc28j60/enc28j60.h ../uip/clock.h \
  ../uip/clock-arch.h ../uip/uip.h ../uip/uipopt.h ../uip/uip-conf.h \
  ../net_config.h ../apps/dhcpc.h ../uip/timer.h ../uip/clock.h \
@@ -69,6 +70,8 @@ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.
 c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/util/delay_basic.h:
 
 c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/math.h:
+
+c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/avr/eeprom.h:
 
 ../apps/adc.h:
 

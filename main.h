@@ -8,6 +8,7 @@
 #include <timers.h>
 #include <avr/io.h>
 #include <util/delay.h>
+#include <avr/eeprom.h>
 #if (ENABLE_DHCP == 1)
 #include <dhcpc.h>
 #endif
@@ -33,6 +34,11 @@
 #endif
 
 
+//объ€вл€ем переменные
+uint16_t cnt_bk_load EEMEM = 0;
+uint16_t cnt_m_load EEMEM = 0;
+uint16_t cnt_c_load EEMEM = 0;
+uint16_t cnt_y_load EEMEM = 0;
 
 #define BUF ((struct uip_eth_hdr *)&uip_buf[0])
 
@@ -51,10 +57,10 @@
 #define MQTT_TOPIC_TONER_SUPPLY4			"/System1/toner_supply4"
 
 
-uint8_t toner_bk_count = 0;
-uint8_t toner_c_count = 0;
-uint8_t toner_m_count = 0;
-uint8_t toner_y_count = 0;
+uint16_t toner_bk_count = 0;
+uint16_t toner_c_count = 0;
+uint16_t toner_m_count = 0;
+uint16_t toner_y_count = 0;
 
 
 
