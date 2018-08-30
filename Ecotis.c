@@ -6,12 +6,12 @@
 
 void ecotis_port_init(void)
 {
-	//инициализация порта для монитора
+	//port init for lcd
 	ADCSRA &= ~(1<<ADEN); 
 	PORTA = 0x00;
 	DDRA = 0xFF;
 	
-	///инициализация порта для кнопок
+	///port init for buttons
 	//DDRC = 0b10000000;
 	//PORTC = 0b10000000;
     //

@@ -34,7 +34,7 @@
 #endif
 
 
-//объ€вл€ем переменные
+//init eeprom variables
 uint16_t cnt_bk_load EEMEM = 0;
 uint16_t cnt_m_load EEMEM = 0;
 uint16_t cnt_c_load EEMEM = 0;
