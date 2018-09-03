@@ -70,9 +70,9 @@ void pub_toner_sup_y(void)
 }
 void show_state_lcd(void)
 {
-	if (timer_expired(&lcd_state_timer))
+	if (timer_expired(&mqtt_lcd_state_timer))
 	{
-		timer_reset(&lcd_state_timer);
+		timer_reset(&mqtt_lcd_state_timer);
 		setpos(0,0);
 		str_lcd("     EcoTis     ");
 		
@@ -81,9 +81,9 @@ void show_state_lcd(void)
 }
 void show_ip_lcd(void)
 {
-	if (timer_expired(&lcd_ip_timer))
+	if (timer_expired(&mqtt_lcd_ip_timer))
 	{
-		timer_reset(&lcd_ip_timer);
+		timer_reset(&mqtt_lcd_ip_timer);
 		char str[16];
 		uip_gethostaddr(_ip_addr);
 		
@@ -296,9 +296,11 @@ int main(void)
   // Таймер используется для периодической отправки сообщения по MQTT
   timer_set(&mqtt_pub_timer, CLOCK_SECOND * 10);
   // Таймер отрисовки ECOTIS на LCD
-  timer_set(&lcd_state_timer, CLOCK_SECOND * 15);
+  timer_set(&mqtt_lcd_state_timer, CLOCK_SECOND * 15);
   // Таймер отрисовки IP на LCD
-  timer_set(&lcd_ip_timer, CLOCK_SECOND * 45);
+  timer_set(&mqtt_lcd_ip_timer, CLOCK_SECOND * 45);
+  // Таймер отправки показания датчика давления
+  timer_set(&mqtt_pressure_sensor_pub_timer, CLOCK_SECOND * 3);
   
   ADC_Init();
   
@@ -311,6 +313,7 @@ int main(void)
 	show_state_lcd();
 	show_ip_lcd();
 	adc_task();
+	
 
 	
   }
@@ -441,9 +444,16 @@ void NetTask(void)
 	    {
 		    umqtt_publish(&mqtt, "/System1", (uint8_t *) message, strlen(message));
 		    umqtt_publish(&mqtt, "/System1/info", (uint8_t *) info, strlen(info));
+			
 	    }
 	    
     }
+	if (timer_expired(&mqtt_pressure_sensor_pub_timer))
+	{
+		timer_reset(&mqtt_pressure_sensor_pub_timer);
+		
+		umqtt_publish(&mqtt, "/System1/pressure-sensor/value", (uint8_t *) adc_dec, strlen(adc_dec));
+	}
 
   }
 
