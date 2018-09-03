@@ -299,6 +299,8 @@ int main(void)
   timer_set(&lcd_state_timer, CLOCK_SECOND * 15);
   // Таймер отрисовки IP на LCD
   timer_set(&lcd_ip_timer, CLOCK_SECOND * 45);
+  //таймер отправки показания датчика давления
+  timer_set(&pressure_sensor_pub_timer, CLOCK_SECOND * 1);
   
   ADC_Init();
   
@@ -444,6 +446,12 @@ void NetTask(void)
 	    }
 	    
     }
+	if (timer_expired(&pressure_sensor_pub_timer))
+	{
+		timer_reset(&pressure_sensor_pub_timer);
+		
+		umqtt_publish(&mqtt, "/System1/pressure-sensor/value", (uint8_t *) adc_dec, strlen(adc_dec));
+	}
 
   }
 

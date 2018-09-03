@@ -71,6 +71,7 @@ struct timer mqtt_conn_timer;
 struct timer mqtt_pub_timer;
 struct timer lcd_state_timer;
 struct timer lcd_ip_timer;
+struct timer pressure_sensor_pub_timer;
 
 static clock_time_t timerCounter = 0;
 
