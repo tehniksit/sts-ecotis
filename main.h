@@ -69,9 +69,8 @@ struct timer arp_timer;
 struct timer mqtt_kalive_timer;
 struct timer mqtt_conn_timer;
 struct timer mqtt_pub_timer;
-struct timer mqtt_lcd_state_timer;
-struct timer mqtt_lcd_ip_timer;
-struct timer mqtt_pressure_sensor_pub_timer;
+struct timer lcd_state_timer;
+struct timer lcd_ip_timer;
 
 static clock_time_t timerCounter = 0;
 
